@@ -1,0 +1,26 @@
+*{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: rgb(78, 76, 76);
+    color: rgb(255, 0, 153);
+}
+#form{
+    background-color: rgb(237, 161, 219);
+    border-radius: 10px;
+    width: 67%;
+    height: 5em;
+    padding: 2em 5em;
+    color: black;
+}
+#guess{
+    margin: 10px;
+}
+#submit{
+    background-color: pink;
+    transition: background-color 0.25s;
+}
+#submit:hover{
+    cursor: pointer;
+    background-color: rgb(255, 0, 153)
+}
