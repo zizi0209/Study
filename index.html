@@ -7,22 +7,14 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Temperature Conversion</h1>
-    <div id="formContainer">
-        <form id="tempContainer">
-            <div class="checkbox-container">
-                <input type="radio" name="conversion" id="toC">
-                <label for="toC">Fahrenheit -> Celsius</label>
-            </div>
-            <div class="checkbox-container">
-                <input type="radio" name="conversion" id="toF">
-                <label for="toF">Celsius -> Fahrenheit</label>
-            </div>
-            <input type="number" id="temperature" placeholder="Enter temperature" step="any"><br>
-            <button type="submit">Convert</button>
-            <p id="message">Pls enter the temperature u need to convert🌹</p>
-        </form>
-    </div>
+    <h1>Dice Roller</h1>
+    <form>
+        <label for="dice">Number of dice:</label>
+        <input type="number" id="dice">
+        <button id="btn">Roll dice</button>
+        <p id="message">Dice:</p>
+        <div id="img"></div>
+    </form>
     
     <script src="index.js"></script>
 </body>

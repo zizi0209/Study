@@ -1,23 +1,25 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('tempContainer');
-    const message = document.getElementById('message');
-    
-    form.addEventListener('submit', function(event) {
+document.addEventListener('DOMContentLoaded',function(){
+    const dice=document.getElementById('dice');
+    const image=document.getElementById('img');
+    const roll=document.getElementById('btn');
+    const mess=document.getElementById('message');
+    let value=[];
+    let img=[];
+    //
+    roll.addEventListener('click',function(event){
         event.preventDefault();
-        
-        const temp = parseFloat(document.getElementById('temperature').value);
-        const toC = document.getElementById('toC').checked;
-        const toF = document.getElementById('toF').checked;
-        let result;
-
-        if (toC) {
-            result = (temp - 32) / 1.8;
-            message.textContent = `Result: ${result.toFixed(2)} 😏`;
-        } else if (toF) {
-            result = (temp * 1.8) + 32;
-            message.textContent = `Result: ${result.toFixed(2)} 😏`;
-        } else {
-            message.textContent = 'Pls select 1 opt & enter the temperature!';
+        if(Number(dice.value)<0){
+            alert('Are u kidding me:)? A negative number?');
+        }else if(Number(dice.value)===0){
+            alert('You rolled no dice!');
+        }else{
+            for(let i=0;i<Number(dice.value);i++){
+                let random=Math.floor(Math.random()*6)+1;
+                value.push(random);
+                img.push(`<image src='/asset/Dice_${random}.png'>`);
+            }
+            mess.textContent=`You rolled: ${value.join(', ')}`;
+            image.innerHTML=img.join(' ');
         }
     });
-});
+})
