@@ -1,22 +1,39 @@
-function updateClock(){
-    const now = new Date();
-    const hour = now.getHours();
-    const minute = now.getMinutes();
-    const second = now.getSeconds();
-    const ampm = hour >= 12 ? 'PM' : 'AM';
-    //
-    document.getElementById('hours').textContent=String(hour).padStart(2,'0');
-    document.getElementById('minutes').textContent=String(minute).padStart(2,'0');
-    document.getElementById('seconds').textContent=String(second).padStart(2,'0');
-    document.getElementById('ampm').textContent=ampm;
-    //
-    const secondDeg = (second / 60) * 360;
-    const minuteDeg = (minute / 60) * 360 + (second / 60) * 6;
-    const hourDeg = (hour / 12) * 360 + (minute / 60) * 30;
-
-    document.querySelector('.second').style.transform=`rotate(${secondDeg}deg)`;
-    document.querySelector('.minute').style.transform=`rotate(${minuteDeg}deg)`;
-    document.querySelector('.hour').style.transform=`rotate(${hourDeg}deg)`;
+const start=document.getElementById('start');
+const stop=document.getElementById('stop');
+const reset=document.getElementById('reset');
+let time=0;
+const display=document.getElementById('display');
+let intervalId=null;
+//
+start.addEventListener('click',function(){
+    if(!intervalId){
+        intervalId=setInterval(update,10);
+    }
+})
+stop.addEventListener('click',function(){
+    if(intervalId){
+        clearInterval(intervalId);
+        intervalId=null;
+    }
+})
+reset.addEventListener('click',function(){
+    time=0;
+    updateDisplay();
+})
+//
+function update(){
+    time+=10;
+    updateDisplay();
 }
-updateClock();
-setInterval(updateClock,1000);
+function updateDisplay(){
+    let ms=time%1000;
+    let s=Math.floor(time/(1000))%60;
+    let m=Math.floor(time/(1000*60))%60;
+    let h=Math.floor(time/(1000*60*60));
+    
+    display.textContent=`${String(h).padStart(2,'0')}:
+                         ${String(m).padStart(2,'0')}:
+                         ${String(s).padStart(2,'0')}:
+                         ${String(ms%100).padStart(2,'0')}`;
+    
+};
