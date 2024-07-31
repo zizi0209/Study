@@ -7,13 +7,16 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Dice Roller</h1>
-    <form>
-        <label for="dice">Number of dice:</label>
-        <input type="number" id="dice">
-        <button id="btn">Roll dice</button>
-        <p id="message">Dice:</p>
-        <div id="img"></div>
+    <h1>Interest Calculator</h1>
+    <form id="icContainer">
+        <label for="amount">Principal amount:</label>
+        <input type="number" id="amount" name="amount" required><br>
+        <label for="rate">Interest rate:</label>
+        <input type="number" id="rate" step="any"><br>
+        <label for="year">Year:</label>
+        <input type="number" id="year" step="any"><br>
+        <button id="submit">Submit</button>
+        <p id="message">Total:</p>
     </form>
     
     <script src="index.js"></script>
