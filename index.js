@@ -26,7 +26,9 @@ function calculateResult() {
     }
     display.innerText=temp;
     try {
-        display.innerText = eval(display.innerText);
+        display.innerText=eval(display.innerText);
+        // temp = eval(display.innerText);
+        // display.innerText = temp.toFixed(2);
     } catch {
         display.innerText = 'Error';
     }
