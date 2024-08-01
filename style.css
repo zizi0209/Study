@@ -1,45 +1,50 @@
-h1,body{
-    text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    padding: 10px;
-    margin: 10px;
-    line-height: 2.5;
-    font-size: 1.5em;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    font-family: 'Arial', sans-serif;
 }
-#container{
-    width: 100%;
-    height: 30vh;
-    background-color: lightgray;
-    border-radius: 30px;
-}
-#display{
-    font-size: xx-large;
-}
-#start,#stop,#reset{
+
+.calculator {
+    background-color: #fff;
     border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+}
+
+.display {
+    background-color: #222;
+    color: #fff;
+    font-size: 2em;
     padding: 10px;
-    margin: 10px;
-    width: 20vh;
-    font-family: impact;
+    text-align: right;
+    border-radius: 5px;
+    margin-bottom: 20px;
 }
-#start{
-    background-color: lightgreen;
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
 }
-#start:hover{
+
+.btn {
+    background-color: #f9f9f9;
+    border: none;
+    padding: 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
     cursor: pointer;
-    background-color: darkgreen;
+    transition: background-color 0.3s;
 }
-#stop{
-    background-color: lightcoral;
+
+.btn:hover {
+    background-color: #ddd;
 }
-#stop:hover{
-    cursor: pointer;
-    background-color: darkred;
-}
-#reset{
-    background-color: lightyellow;
-}
-#reset:hover{
-    cursor: pointer;
-    background-color: darkgoldenrod;
+
+.btn:active {
+    background-color: #bbb;
 }
