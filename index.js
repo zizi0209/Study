@@ -1,35 +1,31 @@
-function clearDisplay() {
-    document.getElementById('display').innerText = '0';
-};
+const box=document.getElementById('box');
 
-function appendToDisplay(value) {
-    const display = document.getElementById('display');
-    if (display.innerText === '0') {
-        display.innerText = value;
-    }else if(display.innerText==='Error'||display.innerText==='Infinity'||display.innerText==='undefined'||display.innerText==='NaN'){
-        display.innerText=value; 
-    }else {
-        display.innerText += value;
-    }
-};
-
-function calculateResult() {
-    const display = document.getElementById('display');
-    //xử lý dấu -- or ++
-    let temp=display.innerText;
-    while(temp.includes('--')||temp.includes('++')){
-        if(temp.includes('--')){
-            temp=temp.replace('--','+');
-        }else{
-            temp=temp.replace('++','+');
+document.addEventListener('keyup',event=>{
+    box.textContent='Hate u 💀';
+    box.style.backgroundColor='darkblue';
+});
+//
+const move=10;
+let x=0,y=0;
+document.addEventListener('keydown',event=>{
+    box.textContent='Luv u🌹';
+    box.style.backgroundColor='darkviolet';
+    if(event.key.startsWith('Arrow')){
+        switch(event.key){
+            case 'ArrowUp':
+                y-=move;
+                break;
+            case 'ArrowDown':
+                y+=move;
+                break;
+            case 'ArrowRight':
+                x+=move;
+                break;
+            case 'ArrowLeft':
+                x-=move;
+                break;
         }
+        box.style.top=`${y}px`;
+        box.style.left=`${x}px`;
     }
-    display.innerText=temp;
-    try {
-        display.innerText=eval(display.innerText);
-        // temp = eval(display.innerText);
-        // display.innerText = temp.toFixed(2);
-    } catch {
-        display.innerText = 'Error';
-    }
-};
+});
