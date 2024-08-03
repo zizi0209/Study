@@ -1,11 +1,27 @@
-#box{
-    position: relative;
-    background-color: rgb(40, 171, 127);
-    width: 10rem;
-    height: 10rem;
-    align-items: center;
+h1,body{
     text-align: center;
-    font-size: xxx-large;
-    color: rgb(171, 254, 6);
-    border-radius: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(255, 255, 99);
+    background-color: yellowgreen;
+}
+img{
+    width: 30%;
+    height: auto;
+    border-radius: 100%;
+}
+img:hover{
+    cursor: pointer;
+}
+#cmt,#score{
+    font-size: 20px;
+    background-color: green;
+    margin: 10px;
+    padding: auto;
+}
+#result{
+    font-size: xx-large;
+    color: darkgreen;
+    font-family: sans-serif;
+    font-weight: 1000;
+    margin: auto;
 }
