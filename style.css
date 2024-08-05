@@ -1,27 +1,52 @@
-h1,body{
+h1{
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: rgb(255, 255, 99);
-    background-color: yellowgreen;
+    font-family: 'Lucida Sans', sans-serif;
+    animation: color-change 5s infinite;
 }
-img{
-    width: 30%;
-    height: auto;
-    border-radius: 100%;
+body{
+    background-color: tomato;
 }
-img:hover{
+.slideContainer{
+    position: relative;
+    width: 100%;
+    margin: auto;
+    /* overflow: hidden; */
+}
+.slideContainer img{
+    width: 100%;
+    display: none;
+}
+
+img.displaySlide{
+    display: block;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.slideContainer button{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2rem;
+    padding: 10px 15px;
+    background-color: hsla(0, 0%, 0%, 0.5);
+    color: white;
+    border: none;
     cursor: pointer;
 }
-#cmt,#score{
-    font-size: 20px;
-    background-color: green;
-    margin: 10px;
-    padding: auto;
+.prev{
+    left: 0;
 }
-#result{
-    font-size: xx-large;
-    color: darkgreen;
-    font-family: sans-serif;
-    font-weight: 1000;
-    margin: auto;
+.next{
+    right: 0;
+}
+@keyframes fade {
+    from {opacity: .5}
+    to {opacity: 1}
+}
+@keyframes color-change{
+    0% {color: white;}
+    25% {color: aqua;}
+    50% {color: green;}
+    75% {color: yellow;}
+    100% {color: white;}
 }

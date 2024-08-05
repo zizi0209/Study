@@ -3,25 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock-Paper-Scissors Game</title>
+    <title>Slide show</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Rock-Paper-Scissors Game</h1>
-    <div id="img">
-        <img onclick="playGame('rock')" src="asset/rock.jpg">
-        <img onclick="playGame('paper')" src="asset/paper.jpg">
-        <img onclick="playGame('scissors')" src="asset/scissors.jpg">
+    <h1>Slideshow The Four Celestial Dragons</h1>
+    <div class="slideContainer">
+        <div class="slide">
+            <img src="asset/bachlong.jpg">
+            <img src="asset/thanhlong.jpg">
+            <img src="asset/luclong.jpg">
+            <img src="asset/hoanglong.jpg">
+        </div>
+        <button class="prev" onclick="prevSlide()">&#10094</button>
+        <button class="next" onclick="nextSlide()">&#10095</button>
     </div>
-    <div id="cmt">
-        <p id="playerChoice">Player:</p>
-        <p id="computerChoice">Computer:</p>
-    </div>
-    <p id="result">Result</p>
-    <div id="score">
-        <p id="playerScore">Player Score: 0</p>
-        <p id="computerScore">Computer Score: 0</p>
-    </div>
+    
 
     <script src="index.js"></script>
 </body>
